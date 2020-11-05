@@ -132,7 +132,7 @@ public class OperationService {
     public Double balanceOperation() {
         double totalAmount = 0;
 
-        List<OperationEntity> operations = operationRepository.findAllNotPaginated();
+        Iterable<OperationEntity> operations = operationRepository.findAll();
 
         for (OperationEntity operationEntity : operations) {
             if (operationEntity.getType().equals(OperationType.INCOME)) {
