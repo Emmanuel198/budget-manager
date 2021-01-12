@@ -5,7 +5,6 @@ import com.alkemy.budgetmanager.entity.OperationEntity;
 import com.alkemy.budgetmanager.exceptions.OperationNotFound;
 import com.alkemy.budgetmanager.mappers.OperationMapper;
 import com.alkemy.budgetmanager.models.Operation;
-import com.alkemy.budgetmanager.models.OperationType;
 import com.alkemy.budgetmanager.repository.OperationRepository;
 import org.junit.Assert;
 import org.junit.Before;
