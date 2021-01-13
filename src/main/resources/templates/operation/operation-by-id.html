@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Operation</title>
+
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<link rel="stylesheet"
+		  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+	<link rel="stylesheet"
+		  href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link
+			href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
+			rel="stylesheet">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script
+	src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+</head>
+<body>
+	<header></header>
+	<div>
+		<h2 class="title">EQUIPO PAAS</h2>
+		<br>
+	<div class="table-responsive">
+		<table class="table" >
+			<thead>
+				<tr>
+					<th>Concept</th>
+					<th>Amount</th>
+					<th>Date</th>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="operation : ${operation}">
+					<td th:text="${operation.concept}">
+					<td th:text="${operation.amount}">
+					<td th:text="${operation.date}">
+					<td th:text="${operation.type}">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<div class="action-button">
+			<a class="btn btn-secondary btn-sm" th:href="@{/operations}">Volver</a>
+		</div>
+			<br>
+	</div>
+	<footer></footer>
+	</div>
+</body>
+</html>

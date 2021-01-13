@@ -3,7 +3,7 @@ package com.alkemy.budgetmanager.entity;
 import com.alkemy.budgetmanager.models.OperationType;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "operation")
@@ -17,16 +17,16 @@ public class OperationEntity {
     @Column
     private Double amount;
     @Column
-    private LocalDateTime date;
+    private LocalDate date;
     @Column(name = "operation_type")
     @Enumerated(EnumType.STRING)
     private OperationType type;
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

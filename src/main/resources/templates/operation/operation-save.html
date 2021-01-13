@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Operation</title>
+
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<link rel="stylesheet"
+		  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+	<link rel="stylesheet"
+		  href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link
+			href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
+			rel="stylesheet">
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script
+	src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+</head>
+<body>
+	<header></header>
+		<br>
+		<h2 class="title"> Operations </h2>
+		<form class="admin-form"  th:action="@{/operations/save}" th:object="${operation}"
+			method="POST" enctype="multipart/form-data">
+			<label for="name">Concept: </label>
+			<input type="text" class="form-control" id="name" th:field="*{concept}" name="concept" required>
+			<small class="form-text text-danger" th:if="${#fields.hasErrors('concept')}" th:errors="*{concept}"></small>
+
+			 <input type="hidden" th:field="*{id}" name="id" id="id">
+				
+		    <label for="name">Amount:</label>
+			<input type="text" class="form-control" id="amount"th:field="*{amount}" name="amount" required>
+			<small class="form-text text-danger" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></small>
+
+			<label for="name">Type: </label>
+			<select th:field="*{type}" class="form-control">
+				<option th:each="operationType : ${operationType}" th:text="${operationType}"
+						th:value="${operationType}"></option></select>
+
+			<br>
+				<div class="action-button">
+					<a class="btn btn-secondary btn-sm" th:href="@{/operations}">Cancelar</a>
+					<a class="btn btn-success btn-sm"> <button type="submit">Guardar</button></a>
+				</div>
+		</form>
+	</div>
+	<footer></footer>
+	<br>
+	<br>
+</body>
+</html>

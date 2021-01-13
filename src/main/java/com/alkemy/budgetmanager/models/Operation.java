@@ -1,13 +1,13 @@
 package com.alkemy.budgetmanager.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Operation {
 
     private Long id;
     private String concept;
     private Double amount;
-    private LocalDateTime date;
+    private LocalDate date;
     private OperationType type;
 
     public Long getId() {
@@ -34,11 +34,11 @@ public class Operation {
         this.amount = amount;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
